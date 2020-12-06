@@ -5,7 +5,13 @@ VisualStudioVersion = 16.0.30330.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileMental", "FileMental.csproj", "{CC98D71F-E898-45E2-81DF-E2D053A71CA7}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "KevinHelper", "..\..\KevinHelper\KevinHelper.shproj", "{BA199E36-6C69-4A14-A786-D27268D83FEB}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\..\KevinHelper\KevinHelper.projitems*{ba199e36-6c69-4a14-a786-d27268d83feb}*SharedItemsImports = 13
+		..\..\KevinHelper\KevinHelper.projitems*{cc98d71f-e898-45e2-81df-e2d053a71ca7}*SharedItemsImports = 4
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
