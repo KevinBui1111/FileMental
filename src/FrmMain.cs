@@ -30,16 +30,16 @@ namespace FileMental
                 var item = o as KFile;
                 return helper.GetImageIndex(item.Name, item.IsFolder);
             };
-
             RowBorderDecoration rbd = new RowBorderDecoration();
             rbd.BorderPen = new Pen(Color.DodgerBlue, 1);
             rbd.FillBrush = new SolidBrush(Color.Transparent);
             rbd.BoundsPadding = new Size(0, 0);
             rbd.CornerRounding = 0.0f;
 
-            olvFileList.HotItemStyle = new HotItemStyle();
+            //olvFileList.HotItemStyle = new HotItemStyle();
             //olvFileList.HotItemStyle.BackColor = Color.WhiteSmoke;
-            olvFileList.HotItemStyle.Decoration = rbd;
+            //olvFileList.HotItemStyle.Decoration = rbd;
+            olvFileList.SelectedRowDecoration = rbd;
 
             var dir = await JobWalkDirectories.LoadFolderAsync(@"E:\Downloads\");
             //rootLocal = new KFile();
@@ -93,6 +93,12 @@ namespace FileMental
         {
             if (((DataObject)e.DataObject).GetDataPresent(DataFormats.FileDrop))
                 e.Effect = DragDropEffects.Copy;
+        }
+        int count = 0;
+        private void olvFileList_ItemActivate(object sender, EventArgs e)
+        {
+            var file = (KFile)olvFileList.SelectedObject;
+            Text = $"{file?.Name} - {count++}";
         }
     }
 }
